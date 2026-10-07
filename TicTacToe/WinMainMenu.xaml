@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
-        Title="TicTacToe" Height="750" Width="600" ResizeMode="NoResize" Icon="/iconTicTacToe.jpg">
+        Title="TicTacToe" Height="750" Width="600" ResizeMode="NoResize" Icon="/iconTicTacToe.jpg" WindowStartupLocation="CenterScreen">
     <Grid>
         
     </Grid>
