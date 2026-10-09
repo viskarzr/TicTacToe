@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
 namespace TicTacToe
 {
@@ -41,7 +42,17 @@ namespace TicTacToe
             {
                 if (board[i*3] == board[i*3+1] && board[i*3+1] == board[i*3+2] && board[i*3]!="")
                 {
-                    MessageBox.Show($"{board[i * 3]} выиграл!");
+                    //MessageBox.Show($"{board[i * 3]} выиграл!");
+                    //var result = Xceed.Wpf.Toolkit.MessageBox.Show($"{board[i * 3]} выиграл!", "Результат игры");
+                    var msgBox = new Xceed.Wpf.Toolkit.MessageBox
+                    {
+                        Text = $"{board[i * 3]} выиграл!",
+                        Caption = "Результат игры!",
+                        WindowBackground = System.Windows.Media.Brushes.LightPink,
+                        WindowBorderBrush = System.Windows.Media.Brushes.DarkViolet,
+                        OkButtonContent = "Играть снова"
+                    };
+                    var result = msgBox.ShowDialog();
                     ResetGame();
                     return;
                 }
@@ -51,7 +62,17 @@ namespace TicTacToe
             {
                 if (board[i] == board[i+3] && board[i+3] == board[i+6] && board[i] !="")
                 {
-                    MessageBox.Show($"{board[i]} выиграл!");
+                    //MessageBox.Show($"{board[i]} выиграл!");
+                    //var result = Xceed.Wpf.Toolkit.MessageBox.Show($"{board[i]} выиграл!", "Результат игры");
+                    var msgBox = new Xceed.Wpf.Toolkit.MessageBox
+                    {
+                        Text = $"{board[i]} выиграл!",
+                        Caption = "Результат игры!",
+                        WindowBackground = System.Windows.Media.Brushes.LightPink,
+                        WindowBorderBrush = System.Windows.Media.Brushes.DarkViolet,
+                        OkButtonContent = "Играть снова"
+                    };
+                    var result = msgBox.ShowDialog();
                     ResetGame();
                     return;
                 }
@@ -60,14 +81,34 @@ namespace TicTacToe
             if (board[0] == board[4] && board[4] == board[8] && board[0]!=""
                 || board[2] == board[4]&& board[4] == board[6] && board[2]!="")
             {
-                MessageBox.Show($"{board[4]} выиграл!");
+                //MessageBox.Show($"{board[4]} выиграл!");
+                var msgBox = new Xceed.Wpf.Toolkit.MessageBox
+                {
+                    Text = $"{board[4]} выиграл!",
+                    Caption = "Результат игры!",
+                    WindowBackground = System.Windows.Media.Brushes.LightPink,
+                    WindowBorderBrush = System.Windows.Media.Brushes.DarkViolet,
+                    OkButtonContent = "Играть снова"
+                };
+                var result = msgBox.ShowDialog();
+                //var result = Xceed.Wpf.Toolkit.MessageBox.Show($"{board[4]} выиграл!", "Результат игры");
                 ResetGame();
                 return;
             }
 
             if (Array.TrueForAll(board, s=>s!=""))
             {
-                MessageBox.Show("Ничья!");
+                //MessageBox.Show("Ничья!");
+                //var result = Xceed.Wpf.Toolkit.MessageBox.Show("Ничья!", "Результат игры");
+                var msgBox = new Xceed.Wpf.Toolkit.MessageBox
+                {
+                    Text = $"Ничья!",
+                    Caption = "Результат игры!",
+                    WindowBackground = System.Windows.Media.Brushes.LightPink,
+                    WindowBorderBrush = System.Windows.Media.Brushes.DarkViolet,
+                    OkButtonContent = "Играть снова"
+                };
+                var result = msgBox.ShowDialog();
                 ResetGame();
             }
         }

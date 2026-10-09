@@ -25,6 +25,14 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!--<Style x:Key="MyMessageBoxStyle">
+            <Setter Property="WindowBackground" Value="#FFF0F0F0"/>
+            <Setter Property="WindowBorderBrush" Value="#CCCCCC"/>
+            <Setter Property="CaptionForeground" Value="#333333"/>
+            <Setter Property="Foreground" Value="#222222"/>
+        </Style>-->
+
     </Application.Resources>
 </Application>
     
