@@ -23,5 +23,12 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
+
+        private void btnGameSimple_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow f = new MainWindow();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

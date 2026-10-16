@@ -34,6 +34,7 @@ namespace TicTacToe
             for (int i = 0; i < board.Length; i++)
                 board[i] = "";
             UpdateButtons();
+            UpdateTurnDisplay();
         }
 
         private void CheckForWin()
@@ -46,7 +47,7 @@ namespace TicTacToe
                     //var result = Xceed.Wpf.Toolkit.MessageBox.Show($"{board[i * 3]} выиграл!", "Результат игры");
                     var msgBox = new Xceed.Wpf.Toolkit.MessageBox
                     {
-                        Text = $"{board[i * 3]} выиграл!",
+                        Text = $"Игрок {board[i * 3]} выиграл!",
                         Caption = "Результат игры!",
                         WindowBackground = System.Windows.Media.Brushes.LightPink,
                         WindowBorderBrush = System.Windows.Media.Brushes.DarkViolet,
@@ -66,7 +67,7 @@ namespace TicTacToe
                     //var result = Xceed.Wpf.Toolkit.MessageBox.Show($"{board[i]} выиграл!", "Результат игры");
                     var msgBox = new Xceed.Wpf.Toolkit.MessageBox
                     {
-                        Text = $"{board[i]} выиграл!",
+                        Text = $"Игрок {board[i]} выиграл!",
                         Caption = "Результат игры!",
                         WindowBackground = System.Windows.Media.Brushes.LightPink,
                         WindowBorderBrush = System.Windows.Media.Brushes.DarkViolet,
@@ -84,7 +85,7 @@ namespace TicTacToe
                 //MessageBox.Show($"{board[4]} выиграл!");
                 var msgBox = new Xceed.Wpf.Toolkit.MessageBox
                 {
-                    Text = $"{board[4]} выиграл!",
+                    Text = $"Игрок {board[4]} выиграл!",
                     Caption = "Результат игры!",
                     WindowBackground = System.Windows.Media.Brushes.LightPink,
                     WindowBorderBrush = System.Windows.Media.Brushes.DarkViolet,
@@ -121,6 +122,18 @@ namespace TicTacToe
             }
         }
 
+        private void UpdateTurnDisplay()
+        {
+            if (turn == 0)
+            {
+                tbPlayerMove.Text = "Ход: Крестики (X)";
+            }
+            else
+            {
+                tbPlayerMove.Text = "Ход: Нолики (O)";
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn)
@@ -133,8 +146,16 @@ namespace TicTacToe
                 turn = 1 - turn;
 
                 UpdateButtons();
+                UpdateTurnDisplay();
                 CheckForWin();
             }
+        }
+
+        private void MainGameWin_Initialized(object sender, EventArgs e)
+        {
+            //WinMainMenu f = new WinMainMenu();
+            //f.ShowDialog();
+
         }
     }
 }

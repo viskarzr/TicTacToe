@@ -1,4 +1,4 @@
-﻿<Window x:Class="TicTacToe.WinMainMenu"
+﻿<Window x:Name="winMenu" x:Class="TicTacToe.WinMainMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="TicTacToe" Height="750" Width="600" ResizeMode="NoResize" Icon="/iconTicTacToe.jpg" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="КРЕСТИКИ-НОЛИКИ" VerticalAlignment="Center" FontSize="52" FontWeight="DemiBold" FontFamily="XO Thames" Foreground="#FF84456B" TextAlignment="Center"/>
+        <StackPanel Background="#FFFFDDF4" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="3">
+            <Button x:Name="btnGameSimple" Content="НАЧАТЬ ИГРУ (3Х3)" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold" Click="btnGameSimple_Click"/>
+            <Button x:Name="btnGameBFild" Content="НАЧАТЬ ИГРУ (6Х6)" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold"/>
+            <Button Content="НАЧАТЬ ИГРУ (БОТ ДЛЯ 3Х3)" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold"/>
+            <Button x:Name="btnInfo" Content="О ПРОГРАММЕ" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold"/>
+            <Button x:Name="btnExit" Content="ВЫЙТИ ИЗ ИГРЫ" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold"/>
+        </StackPanel>
     </Grid>
 </Window>
