@@ -26,6 +26,11 @@
             </Style.Triggers>
         </Style>
 
+        <!--<Style x:Key="MyYesButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FFA7416A"/>
+            <Setter Property="Foreground" Value="#FF721A3D"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>-->
         <!--<Style x:Key="MyMessageBoxStyle">
             <Setter Property="WindowBackground" Value="#FFF0F0F0"/>
             <Setter Property="WindowBorderBrush" Value="#CCCCCC"/>
