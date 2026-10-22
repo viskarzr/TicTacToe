@@ -27,8 +27,8 @@ namespace TicTacToe
         private void btnGameSimple_Click(object sender, RoutedEventArgs e)
         {
             MainWindow f = new MainWindow();
+            f.Owner = this;
             f.ShowDialog();
-            this.Close();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -40,33 +40,37 @@ namespace TicTacToe
                 Xceed.Wpf.Toolkit.MessageBox.NoButtonContentProperty, "Остаться"));
 
             MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show(
-    "Вы уверены, что хотите выйти из игры?",
-    "Выход из игры",
-    MessageBoxButton.YesNo,
-    MessageBoxImage.Question,
-    MessageBoxResult.Yes,
-    style);
+               "Вы уверены, что хотите выйти из игры?",
+               "Выход из игры",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question,
+                MessageBoxResult.Yes,
+                style);
 
             if (result == MessageBoxResult.Yes)
             {
                 this.Close();
             }
+        }
 
-            //var msgBox = new Xceed.Wpf.Toolkit.MessageBox
-            //{
-            //    Text = "Вы уверены, что хотите выйти из игры?",
-            //    Caption = "Выход из игры",
-            //    WindowBackground = System.Windows.Media.Brushes.LightPink,
-            //    WindowBorderBrush = System.Windows.Media.Brushes.DarkOrchid,
-            //    YesButtonContent = "Выйти",
-            //    YesButtonStyle = (Style)FindResource("MyYesButtonStyle"),
-            //    NoButtonContent = "Остаться"
-            //};
-            //bool? result = msgBox.ShowDialog();
-            //if (result == true)
-            //{
-            //    this.Close();
-            //}
+        private void btnGameBFild_Click(object sender, RoutedEventArgs e)
+        {
+            winGameSecondPlace f = new winGameSecondPlace();
+            f.Owner = this;
+            f.ShowDialog();
+        }
+
+        private void btnInfo_Click(object sender, RoutedEventArgs e)
+        {
+            var msgBox = new Xceed.Wpf.Toolkit.MessageBox
+            {
+                Text = $"Данная программа представляет собой курсовой проект \nпо дисциплине МДК 01.01 РПМ,\nстудентки гр.ИСП-41 Кирюшовой Виктории",
+                Caption = "О программе КРЕСТИКИ-НОЛИКИ",
+                WindowBackground = System.Windows.Media.Brushes.LightPink,
+                WindowBorderBrush = System.Windows.Media.Brushes.DarkOrchid,
+                OkButtonContent = "Понятно"
+            };
+            var result = msgBox.ShowDialog();
         }
     }
 }

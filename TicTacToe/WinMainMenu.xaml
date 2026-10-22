@@ -29,9 +29,9 @@
         <TextBlock Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="КРЕСТИКИ-НОЛИКИ" VerticalAlignment="Center" FontSize="72" FontWeight="DemiBold" FontFamily="XO Thames" Foreground="#FFAA1763" TextAlignment="Center" Grid.RowSpan="2"/>
         <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="3">
             <Button x:Name="btnGameSimple" Content="НАЧАТЬ ИГРУ (3Х3)" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold" Click="btnGameSimple_Click"/>
-            <Button x:Name="btnGameBFild" Content="НАЧАТЬ ИГРУ (6Х6)" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold"/>
+            <Button x:Name="btnGameBFild" Content="НАЧАТЬ ИГРУ (6Х6)" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold" Click="btnGameBFild_Click"/>
             <Button Content="НАЧАТЬ ИГРУ (БОТ ДЛЯ 3Х3)" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold"/>
-            <Button x:Name="btnInfo" Content="О ПРОГРАММЕ" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold"/>
+            <Button x:Name="btnInfo" Content="О ПРОГРАММЕ" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold" Click="btnInfo_Click"/>
             <Button x:Name="btnExit" Content="ВЫЙТИ ИЗ ИГРЫ" Height="72" FontSize="20" FontFamily="XO Thames" FontWeight="Bold" Click="btnExit_Click"/>
         </StackPanel>
     </Grid>

@@ -61,7 +61,7 @@ namespace TicTacToe
                 }
             }
 
-            for (int i =0; i<3; i++)
+            for (int i = 0; i<3; i++)
             {
                 if (board[i] == board[i+3] && board[i+3] == board[i+6] && board[i] !="")
                 {
@@ -161,6 +161,41 @@ namespace TicTacToe
             }
         }
 
+        private void btnRules_Click(object sender, RoutedEventArgs e)
+        {
+            var msgBox = new Xceed.Wpf.Toolkit.MessageBox
+            {
+                Text = $"ПОДГОТОВКА И УЧАСТНИКИ:\r\nИграют два человека.Один играет за «крестики» (X), другой — за «нолики» (O).\r\nИгровое поле — квадрат 3 на 3 клетки (всего 9 ячеек).\r\nКАК ХОДЯТ:\r\n1. Первый ход всегда делают крестики.\r\n2. Игроки ходят по очереди, каждый ставит свой знак в любую свободную клетку.\r\n3. В одну клетку можно поставить только один знак; переставлять уже поставленные фигуры нельзя.\r\nУСЛОВИЯ ПОБЕДЫ:\r\nИгрок побеждает, если первым выстроит ТРИ СВОИХ ЗНАКА ПОДРЯД::\r\n- по горизонтали (в строке),\r\n- по вертикали (в столбце),\r\n- по диагонали (две возможные диагонали).",
+                Caption = "Правила игры в КРЕСТИКИ-НОЛИКИ",
+                WindowBackground = System.Windows.Media.Brushes.LightPink,
+                WindowBorderBrush = System.Windows.Media.Brushes.DarkOrchid,
+                OkButtonContent = "Понятно",
+                Height = double.NaN,
+                Width = double.NaN
+            };
+            var result = msgBox.ShowDialog();
+        }
 
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Style style = new Style();
+            style.Setters.Add(new Setter(
+                Xceed.Wpf.Toolkit.MessageBox.YesButtonContentProperty, "Выйти"));
+            style.Setters.Add(new Setter(
+                Xceed.Wpf.Toolkit.MessageBox.NoButtonContentProperty, "Остаться"));
+
+            MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show(
+               "Вы уверены, что хотите выйти из игры? Счет игры будет утерян!",
+               "Выход из игры",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question,
+                MessageBoxResult.Yes,
+                style);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
