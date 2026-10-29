@@ -93,7 +93,7 @@
         </GroupBox>
         <TextBlock x:Name="tbGameScore" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="5" Grid.Row="7" TextWrapping="Wrap" Text="ИГРОВОЙ СЧЕТ" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="16" Foreground="#FF270E03"/>
         <Button x:Name="btnMainMenu" Content="НА ГЛАВНУЮ" FontWeight="DemiBold" Click="btnMainMenu_Click"/>
-        <Button x:Name="btnRules" Grid.Column="6" Content="ПРАВИЛА" FontSize="14" Click="btnRules_Click"/>
+        <Button x:Name="btnRules" Grid.Column="6" Content="ПРАВИЛА" FontSize="14" Click="btnRules_Click" FontFamily="Arial"/>
         <TextBlock x:Name="tbPlayerMove" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ХОД ИГРОКА" VerticalAlignment="Center" Grid.ColumnSpan="3" FontSize="28" FontWeight="DemiBold"/>
     </Grid>
 </Window>
