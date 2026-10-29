@@ -48,9 +48,11 @@ namespace TicTacToe
         /// </summary>
         private void CheckForWin()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
-                if (board[i * 3] == board[i * 3 + 1] && board[i * 3 + 1] == board[i * 3 + 2] && board[i * 3] != "")
+                int startIdx = i * 6;
+                if (board[startIdx] != "" && board[startIdx] == board[startIdx + 1] && board[startIdx + 1] == board[startIdx + 2] &&
+                    board[startIdx + 2] == board[startIdx + 3] && board[startIdx + 3] == board[startIdx + 4] && board[startIdx + 4] == board[startIdx + 5])
                 {
                     RegisterWin(board[i * 3]);
                     var msgBox = new Xceed.Wpf.Toolkit.MessageBox
@@ -67,9 +69,10 @@ namespace TicTacToe
                 }
             }
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
-                if (board[i] == board[i + 3] && board[i + 3] == board[i + 6] && board[i] != "")
+                if (board[i] != "" && board[i] == board[i + 6] && board[i + 6] == board[i + 12] &&  board[i + 12] == board[i + 18] &&
+                   board[i + 18] == board[i + 24] && board[i + 24] == board[i + 30])
                 {
                     RegisterWin(board[i]);
                     var msgBox = new Xceed.Wpf.Toolkit.MessageBox
@@ -86,10 +89,14 @@ namespace TicTacToe
                 }
             }
 
-            if (board[0] == board[4] && board[4] == board[8] && board[0] != ""
-                || board[2] == board[4] && board[4] == board[6] && board[2] != "")
+            if (board[0] != "" &&
+                board[0] == board[7] &&
+                board[7] == board[14] &&
+                board[14] == board[21] &&
+                board[21] == board[28] &&
+                board[28] == board[35])
             {
-                RegisterWin(board[4]);
+                RegisterWin(board[0]);
                 var msgBox = new Xceed.Wpf.Toolkit.MessageBox
                 {
                     Text = $"Игрок {board[4]} выиграл!",
@@ -101,6 +108,26 @@ namespace TicTacToe
                 var result = msgBox.ShowDialog();
                 ResetGame();
                 return;
+            }
+
+            if (board[5] != "" &&
+               board[5] == board[10] &&
+               board[10] == board[15] &&
+               board[15] == board[20] &&
+               board[20] == board[25] &&
+               board[25] == board[30])
+            {
+                RegisterWin(board[5]);
+                var msgBox = new Xceed.Wpf.Toolkit.MessageBox
+                {
+                    Text = $"Игрок {board[5]} выиграл!",
+                    Caption = "Результат игры!",
+                    WindowBackground = System.Windows.Media.Brushes.LightPink,
+                    WindowBorderBrush = System.Windows.Media.Brushes.DarkOrchid,
+                    OkButtonContent = "Играть снова"
+                };
+                var result = msgBox.ShowDialog();
+                ResetGame();
             }
 
             if (Array.TrueForAll(board, s => s != ""))
